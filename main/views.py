@@ -9,3 +9,6 @@ def test(request):
 
 def check(request):
     return HttpResponse("teksheruu")
+
+def third(request):
+    return render(request, "test3.html")    

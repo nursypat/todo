@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import homepage, test, check
+from main.views import homepage, test, check, third
 
 
 urlpatterns = [
@@ -23,5 +23,6 @@ urlpatterns = [
     path('', homepage, name="home"),
     path("test/", test, name="test"),
     path("check", check),
+    path("test3", third, name = "test3")
    
 ]
