@@ -6,3 +6,6 @@ def homepage(request):
 
 def test(request):
     return render(request, "test.html")    
+
+def check(request):
+    return HttpResponse("teksheruu")
