@@ -1,0 +1,20 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%  for book in books_list  %}
+
+    <h2>{{ book.title}}</h2>
+    <h3>{{ book.description}}</h3>
+    <span>Жанр: </span><span>{{  book.genre  }} com</span>
+
+    {%  endfor %}
+</body>
+</html>
