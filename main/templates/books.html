@@ -7,14 +7,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{%  static  'styles/book.css'  %}"> 
 </head>
 <body>
+  
+
+<section>
+
+    <div class="create_container">
+        <form action="{%   url 'add-book' %}" method="POST">
+            {% csrf_token %}    
+            <input
+                class="create_input"
+                type="text"
+                placeholder="Напишите здесь название книги"
+                name="title_text" > 
+            <input
+                class="create_input"
+                type="text"
+                placeholder=" Субтитр книги"
+                name="sustitle_text" > 
+            <input
+                class="create_input"
+                type="text"
+                placeholder=" Описание книги"
+                name="description_text" > 
+            <input
+                class="create_input"
+                type="text"
+                placeholder=" Цена книги"
+                name="price_text" >    
+            <input
+                class="create_input"
+                type="text"
+                placeholder=" Жанр книги"
+                name="genre_text" >       
+            <input
+                class="create_input"
+                type="text"
+                placeholder="Автор книги"
+                name="author_text" > 
+            <input
+                class="create_input"
+                type="text"
+                placeholder="Год выхода книги"
+                name="year_text" >   
+            <button class="create_button">Добавить</button>
+        </form>
+    </div>
+
+</section>
+
+
+
+   
+ 
+    <section> 
+
     {%  for book in books_list  %}
-
-    <h2>{{ book.title}}</h2>
-    <h3>{{ book.description}}</h3>
-    <span>Жанр: </span><span>{{  book.genre  }} com</span>
-
+        <div class="boluu">
+            <p>{{ book.title}}</p> 
+            <p>{{ book.subtitle}}</p>
+            <p>{{ book.description}}</p> 
+            <p>{{  book.price  }} </p>
+            <p>{{  book.genre  }}</p>
+            <p>{{  book.author  }}</p>
+            <p>{{  book.year  }}</p>
+            <p>{{  book.date  }}</p>
+        
+        </div>
     {%  endfor %}
+    </section>  
+  
 </body>
 </html>
