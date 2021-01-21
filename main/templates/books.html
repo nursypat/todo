@@ -61,11 +61,52 @@
 
 
    
+<div class="todo_container"> 
+     {%  for book in books_list  %}
+    <div class="todo_item   
+        {%  if book.is_favorite  %}
+        marked
+        {% endif  %}
+    
+    
+    ">
+        <div class="todo_item_header">
+          <table>
+                <tr>
+                  <td><h4>{{ book.title}}</h4> </td>
+                  <td>{{ book.subtitle}}</td>
+                  <td>{{ book.description}}</td>
+                  <td>{{  book.price  }} сом</td>
+                  <td>{{  book.genre  }}</td>
+                  <td>{{  book.author  }}</td>
+                  <td>{{  book.year  }}</td>
+                </tr>
+              </table>
+          
+            
+        </div>
+        <div class="todo_item_footer">
+            <p>{{  book.date  }}</p>
+            <div class="action_buttons">
+
+                {% if book.is_favorite %}
+                    <a href="{%  url 'unmark-book' book.id  %}"><img src="{%   static  './icons/star1.png'    %}"></a>
+                {% else %}
+                    <a href="{%  url 'mark-book' book.id  %}"><img src="{%   static  './icons/star.png'    %}"></a>
+                {% endif  %} 
+
+
+                    <a href="{%  url 'delete-book' book.id  %}"><img src="{%   static  './icons/recycle-bin.png'    %}"></a>
+            </div>
+        </div>
+    </div> 
+     {%  endfor %}
+</div>
  
-    <section> 
+    <!-- <section> 
 
     {%  for book in books_list  %}
-        <div class="boluu">
+      
             <p>{{ book.title}}</p> 
             <p>{{ book.subtitle}}</p>
             <p>{{ book.description}}</p> 
@@ -74,10 +115,9 @@
             <p>{{  book.author  }}</p>
             <p>{{  book.year  }}</p>
             <p>{{  book.date  }}</p>
-        
-        </div>
+       
     {%  endfor %}
     </section>  
-  
+   -->
 </body>
 </html>
