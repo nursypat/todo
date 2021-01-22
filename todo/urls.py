@@ -34,6 +34,7 @@ urlpatterns = [
     path("delete-book/<id>/", delete_book, name = "delete-book"),
     path("mark-book/<id>/", mark_book, name = "mark-book"),
     path("unmark-book/<id>/", unmark_book, name = "unmark-book"),
+    path("close-todo/<id>", close_todo, name = "close-todo"),
 
  
    
